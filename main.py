@@ -30,6 +30,10 @@ try:
 except Exception as e:
     print(f"Error al conectar con Supabase: {e}")
 
+@app.get("/")
+def read_root():
+    return {"status": "online", "message": "El backend de bots está funcionando perfectamente"}
+
 # --- PASO 2.2: Endpoint para obtener todos los bots y su estado ---
 @app.get("/api/bots")
 def obtener_bots():
