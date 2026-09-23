@@ -31,6 +31,7 @@ except Exception as e:
     print(f"Error al conectar con Supabase: {e}")
 
 @app.get("/")
+@app.head("/")  # <--- Esto le dice a FastAPI que también responda a las peticiones HEAD de UptimeRobot
 def read_root():
     return {"status": "online", "message": "El backend de bots está funcionando perfectamente"}
 
